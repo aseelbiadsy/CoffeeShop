@@ -1,0 +1,126 @@
+.details-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  padding: 60px 24px;
+}
+
+.details-img-container {
+  width: 420px;
+  max-width: 90vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.details-image {
+  width: 320px;
+  height: 320px;
+  border-radius: 16px;
+  object-fit: cover;
+}
+
+.details-panel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 400px;
+  max-width: 90vw;
+  padding: 32px;
+  border: 3px solid var(--color-icon);
+  border-radius: 10px;
+}
+
+.details-title {
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.details-option {
+  width: 100%;
+  margin-bottom: 18px;
+  text-align: center;
+}
+
+.details-option-label {
+  margin: 0 0 8px;
+  font-size: 16px;
+}
+
+.details-size-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+
+.details-size-btn {
+  min-width: 44px;
+  border: 2px solid var(--color-border);
+  background: var(--color-white);
+  border-radius: 6px;
+  padding: 8px 12px;
+  font-size: 15px;
+}
+
+.details-size-btn.active {
+  border-color: var(--color-icon);
+  color: var(--color-icon);
+  font-weight: 700;
+}
+
+.details-quantity-buttons {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+}
+
+.details-qty-btn {
+  border: none;
+  background: var(--color-surface);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.details-qty-value {
+  font-size: 20px;
+  min-width: 20px;
+  text-align: center;
+}
+
+.details-price {
+  display: flex;
+  flex-direction: row;
+  gap: 6px;
+  font-size: 18px;
+  margin-bottom: 20px;
+}
+
+.details-cta {
+  width: 100%;
+  padding: 12px 16px;
+  background-color: var(--color-icon);
+  border: none;
+  border-radius: 4px;
+  margin-top: 12px;
+  color: var(--color-white);
+  font-size: 16px;
+  font-weight: 600;
+}
+
+.details-cta-secondary {
+  background-color: transparent;
+  border: 2px solid var(--color-icon);
+  color: var(--color-icon);
+}

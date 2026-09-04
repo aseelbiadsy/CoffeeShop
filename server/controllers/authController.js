@@ -1,7 +1,7 @@
 //authController.js
- 
-const {Checkout, User, Order, Category } = require("../models/Schema");
- 
+
+const { Checkout, User, Category } = require("../models/Schema");
+
 // Get all users
 const getAllUsers = async (req, res) => {
   try {
@@ -12,21 +12,6 @@ const getAllUsers = async (req, res) => {
     res.status(500).json({ message: "Error getting all users" });
   }
 };
-// Get all Orders
-// const getAllOrders = async (req, res) => {
-//   console.log("Getting all Orders");
-
-//   try {
-//     const allOrders = await Order.find({});
-
-//     console.log("Retrieved Orders:", allOrders);
-
-//     res.json(allOrders);
-//   } catch (error) {
-//     console.error("Error getting all Orders:", error);
-//     res.status(500).json({ message: "Error getting all Orders" });
-//   }
-// };
 
 // Get all Categ
 const getAllCategories = async (req, res) => {
@@ -125,7 +110,7 @@ const createUser = async (req, res) => {
     res.status(500).json({ message: "Error creating user" });
   }
 };
- 
+
 const createCheckOut =async(req,res)=>{
 
   const { userId, products, totalAmount, shippingAddress, customer } = req.body;
@@ -147,7 +132,7 @@ const createCheckOut =async(req,res)=>{
       customer,
     });
     console.log("CheckOut created:", newCheckout);
-    res.json(newCheckout); 
+    res.json(newCheckout);
 
   } catch (error) {
     console.error('Error creating checkout order:', error);
@@ -155,24 +140,6 @@ const createCheckOut =async(req,res)=>{
   }
 
 }
- 
-const getOrderById = async (req, res) => {
-  const { orderId } = req.params;
-  console.log("Getting order by ID:", orderId);
-
-  try {
-    const order = await Order.findById(orderId);
-
-    if (!order) {
-      return res.status(404).json({ message: 'Order not found' });
-    }
-
-    res.json(order);
-  } catch (error) {
-    console.error('Error getting order by ID:', error);
-    res.status(500).json({ message: 'Error getting order by ID' });
-  }
-};
 
 module.exports = {
   createUser,
@@ -181,6 +148,5 @@ module.exports = {
   getAllCategories,
   getCategoryById,
   createCheckOut,
-    getOrderById,
     getAllCheckOut,
 };

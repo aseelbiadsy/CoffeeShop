@@ -1,5 +1,4 @@
 const express = require("express");
-const mongoose = require("mongoose");
 const bodyParser = require("body-parser");
 const app = express();
 const PORT = 3001;
@@ -17,18 +16,9 @@ const {
   getAllCheckOut,
 } = require("./controllers/authController");
 
-// Connect with MongoDB
-mongoose
-  .connect("mongodb+srv://asil:******@cluster0.q5uaxwu.mongodb.net/users", {
-    // useNewUrlParser: true,
-    // useUnifiedTopology: true,
-  })
-  .then(() => {
-    console.log("Connected to MongoDB");
-  })
-  .catch((err) => {
-    console.error("Error connecting to MongoDB:", err);
-  });
+// Connect with SQLite (creates/opens server/database/coffeeshop.sqlite)
+require("./database/db");
+console.log("Connected to SQLite");
 
 // Express routes
 const router = express.Router();

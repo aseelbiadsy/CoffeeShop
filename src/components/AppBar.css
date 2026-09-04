@@ -1,0 +1,75 @@
+.appbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px 32px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.06);
+}
+
+.appbar-logo {
+  width: 56px;
+  height: 56px;
+  object-fit: contain;
+}
+
+.appbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: 28px;
+}
+
+.appbar-link {
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: var(--color-icon);
+  padding-bottom: 6px;
+  border-bottom: 3px solid transparent;
+}
+
+.appbar-link.active,
+.appbar-link:hover {
+  border-bottom-color: var(--color-icon);
+}
+
+.appbar-actions {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.appbar-username {
+  font-size: 16px;
+  color: var(--color-icon);
+  font-weight: 700;
+}
+
+.appbar-logout {
+  background: none;
+  border: none;
+  font-size: 16px;
+  color: var(--color-icon);
+  font-weight: 700;
+}
+
+.appbar-icon {
+  display: block;
+}
+
+@media (max-width: 720px) {
+  .appbar {
+    flex-wrap: wrap;
+    gap: 10px;
+    padding: 10px 16px;
+  }
+  .appbar-nav {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    gap: 18px;
+  }
+}

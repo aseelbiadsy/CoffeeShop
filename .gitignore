@@ -3,21 +3,10 @@
 # dependencies
 node_modules/
 
-# Expo
-.expo/
+# Vite build output
 dist/
-web-build/
-
-# Native
-*.orig.*
-*.jks
-*.p8
-*.p12
-*.key
-*.mobileprovision
-
-# Metro
-.metro-health-check*
+dist-ssr/
+*.local
 
 # debug
 npm-debug.*
@@ -31,5 +20,8 @@ yarn-error.*
 # local env files
 .env*.local
 
-# typescript
-*.tsbuildinfo
+# SQLite database
+server/database/*.sqlite
+server/database/*.sqlite-journal
+server/database/*.sqlite-wal
+server/database/*.sqlite-shm

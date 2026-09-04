@@ -1,0 +1,45 @@
+.about {
+  padding: 60px 48px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.about-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.about-column {
+  flex: 1;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-heading {
+  font-size: 28px;
+  font-weight: 700;
+  margin: 0 0 16px;
+  color: var(--color-black);
+  align-self: flex-start;
+}
+
+.about-paragraph {
+  font-size: 16px;
+  line-height: 1.7;
+  color: #444;
+  margin: 0;
+}
+
+.about-image {
+  width: 100%;
+  max-width: 480px;
+  border-radius: 16px;
+  object-fit: cover;
+}

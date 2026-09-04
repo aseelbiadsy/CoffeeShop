@@ -1,22 +1,113 @@
-.con {
-    display: inline-block;
-  }
-  
-  .txt1 {
-    font-size: 5em;
-    letter-spacing: 10px;
-    border-right: 5px solid;
-    width: 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    animation: typing 4s steps(26) infinite;
+.hero {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 40px;
+  padding: 64px 64px 40px;
+  min-height: 640px;
+  background: radial-gradient(circle at 15% 20%, #fdf1e8 0%, var(--color-white) 55%);
+  overflow: hidden;
 }
-  
-  @keyframes typing {
-    from {
-      width: 0;
-    }
-    50% {
-      border-color: transparent;
-    }
+
+.hero-text {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  min-width: 320px;
+}
+
+.hero-eyebrow {
+  font-size: 15px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: var(--color-icon);
+  font-weight: 700;
+  margin: 0 0 12px;
+}
+
+.hero-title {
+  font-size: clamp(48px, 6vw, 76px);
+  line-height: 1.05;
+  color: var(--color-icon);
+  font-weight: 900;
+  margin: 0;
+}
+
+.hero-typing-wrap {
+  margin: 10px 0 20px;
+}
+
+.hero-typing {
+  display: inline-block;
+  font-size: clamp(22px, 3vw, 32px);
+  letter-spacing: 4px;
+  color: var(--color-black);
+  border-right: 3px solid var(--color-icon);
+  white-space: nowrap;
+  overflow: hidden;
+  width: 15ch;
+  animation: typing 1.8s steps(15) 1 forwards;
+}
+
+@keyframes typing {
+  from {
+    width: 0;
   }
+}
+
+.hero-subtext {
+  font-size: 17px;
+  color: #5a5a5a;
+  max-width: 420px;
+  margin: 0 0 28px;
+  line-height: 1.6;
+}
+
+.hero-button {
+  background-color: var(--color-icon);
+  color: var(--color-white);
+  border: none;
+  border-radius: 6px;
+  padding: 16px 32px;
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  box-shadow: 0 10px 24px rgba(116, 60, 36, 0.25);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(116, 60, 36, 0.32);
+}
+
+.hero-image-wrap {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 520px;
+  height: auto;
+  border-radius: 24px;
+  object-fit: cover;
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.18);
+}
+
+@media (max-width: 900px) {
+  .hero {
+    flex-direction: column;
+    text-align: center;
+    padding: 40px 24px;
+  }
+  .hero-text {
+    align-items: center;
+  }
+  .hero-subtext {
+    max-width: 100%;
+  }
+}

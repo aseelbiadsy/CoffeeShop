@@ -1,0 +1,30 @@
+.category-scroller {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  overflow-x: auto;
+  padding: 4px 4px 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.category-pill {
+  border: 2px solid var(--color-icon);
+  background: transparent;
+  color: var(--color-icon);
+  border-radius: 8px;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.category-pill:hover {
+  background: #f2e3d8;
+}
+
+.category-pill.active {
+  background: var(--color-icon);
+  color: var(--color-white);
+}
