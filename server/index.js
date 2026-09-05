@@ -1,8 +1,9 @@
 const express = require("express");
 const bodyParser = require("body-parser");
+const cors = require("cors");
 const app = express();
 const PORT = process.env.PORT || 3001;
-const cors = require("cors");
+
 app.use(cors());
 app.use(bodyParser.json());
 
@@ -20,33 +21,22 @@ const {
 require("./database/db");
 console.log("Connected to SQLite");
 
-// Express routes
-const router = express.Router();
-const CategoriesRouter = express.Router();
-const CheckoutRouter = express.Router();
+// All API routes live under /api so nginx can reverse-proxy just this
+// prefix to the backend while serving the built frontend for everything else.
+const api = express.Router();
 
-// Routes
-router.post("/users", createUser);
-CheckoutRouter.post("/Checkout", createCheckOut);
+api.get("/categories", getAllCategories);
+api.get("/categories/:categoryId", getCategoryById);
 
-// GET endpoint for retrieving orders for a specific user
-router.get("/users", getAllUsers);
-CategoriesRouter.get("/", getAllCategories);
+api.get("/users", getAllUsers);
+api.get("/users/:userId", getUser);
+api.post("/users", createUser);
 
-CategoriesRouter.get("/categories/:categoryId", getCategoryById);
-router.get("/users/:userId?", getUser);
+api.get("/Checkout", getAllCheckOut);
+api.post("/Checkout", createCheckOut);
 
-///////////////////////////////
-app.get("/categories", getAllCategories);
-app.get("/users", getAllUsers);
-app.get("/Checkout", getAllCheckOut);
+app.use("/api", api);
 
-// Use routers
-app.use("/", router);
-app.use("/", CategoriesRouter);
-app.use("/", CheckoutRouter);
-
-// Start the server
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

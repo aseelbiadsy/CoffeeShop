@@ -5,8 +5,14 @@ export default defineConfig({
   plugins: [react()],
   server: {
     host: true,
+    proxy: {
+      "/api": "http://localhost:3001",
+    },
   },
   preview: {
     host: true,
+    proxy: {
+      "/api": "http://localhost:3001",
+    },
   },
 });

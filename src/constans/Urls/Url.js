@@ -1,4 +1,4 @@
-const BASE_URL = `http://${window.location.hostname}:3001`;
+const BASE_URL = '/api';
   
 const ENDPOINTS = {
   REGISTER: '/users',
