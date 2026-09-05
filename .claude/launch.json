@@ -6,6 +6,24 @@
       "runtimeExecutable": "npm",
       "runtimeArgs": ["run", "dev"],
       "port": 5173
+    },
+    {
+      "name": "wnc-site",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\mmmmm_43mh2a4\\Desktop\\server-hostinger\\WNC\\my-app && set PORT=3010 && node server.mjs --dev"
+      ],
+      "port": 3010
+    },
+    {
+      "name": "wnc-crm",
+      "runtimeExecutable": "cmd",
+      "runtimeArgs": [
+        "/c",
+        "cd /d C:\\Users\\mmmmm_43mh2a4\\Desktop\\server-hostinger\\crm\\wnc_education && set DJANGO_DEBUG=True && C:\\Users\\mmmmm_43mh2a4\\Desktop\\server-hostinger\\crm\\wnc_education\\.venv-win\\Scripts\\python.exe manage.py runserver 0.0.0.0:8010"
+      ],
+      "port": 8010
     }
   ]
 }
