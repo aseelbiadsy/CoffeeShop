@@ -26,33 +26,8 @@
     margin: 0 0 40px 0;
   }
   
-  #footer .social-links {
-    margin: 0 0 40px 0;
-  }
-  
-  #footer .social-links a {
-    font-size: 12px;
-    display: inline-block;
-    background:  #947566;
-    color: #fff;
-    line-height: 1;
-    padding: 8px 0;
-    margin-right: 4px;
-    border-radius: 50%;
-    text-align: center;
-    width: 28px;
-    height: 16px;
-    transition: 0.3s;
-  }
-  
-  #footer .social-links a:hover {
-    background:  #947566;
-    color: #fff;
-    text-decoration: none;
-  }
-  
   #footer .copyright {
-    margin: 0 0 5px 0;
+    margin: 40px 0 5px 0;
   }
   
   #footer .credits {
