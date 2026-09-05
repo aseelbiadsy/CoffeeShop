@@ -68,6 +68,23 @@ const seedCategories = [
       { name: "Brownie", price: 3.5, imgPath: "https://picsum.photos/seed/brownie/300/300", img: "https://picsum.photos/seed/brownie/300/300" },
     ],
   },
+  {
+    strCategory: "Specialty Drinks",
+    subcategories: [
+      { name: "Caramel Macchiato", price: 4.5, imgPath: "https://picsum.photos/seed/caramelmacchiato/300/300", img: "https://picsum.photos/seed/caramelmacchiato/300/300" },
+      { name: "Flat White", price: 4.0, imgPath: "https://picsum.photos/seed/flatwhite/300/300", img: "https://picsum.photos/seed/flatwhite/300/300" },
+      { name: "Affogato", price: 5.0, imgPath: "https://picsum.photos/seed/affogato/300/300", img: "https://picsum.photos/seed/affogato/300/300" },
+      { name: "Matcha Latte", price: 4.25, imgPath: "https://picsum.photos/seed/matchalatte/300/300", img: "https://picsum.photos/seed/matchalatte/300/300" },
+    ],
+  },
+  {
+    strCategory: "Snacks",
+    subcategories: [
+      { name: "Bagel", price: 3.0, imgPath: "https://picsum.photos/seed/bagel/300/300", img: "https://picsum.photos/seed/bagel/300/300" },
+      { name: "Sandwich", price: 6.5, imgPath: "https://picsum.photos/seed/sandwich/300/300", img: "https://picsum.photos/seed/sandwich/300/300" },
+      { name: "Cookie", price: 2.0, imgPath: "https://picsum.photos/seed/cookie/300/300", img: "https://picsum.photos/seed/cookie/300/300" },
+    ],
+  },
 ];
 
 const categoryCount = db.prepare("SELECT COUNT(*) AS count FROM categories").get().count;
