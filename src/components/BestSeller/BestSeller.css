@@ -1,0 +1,86 @@
+.bestseller-screen {
+  padding: 48px 24px 80px;
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+.bestseller-title {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--color-black);
+  text-align: center;
+  margin: 0 0 8px;
+}
+
+.bestseller-subtitle {
+  text-align: center;
+  color: #666;
+  margin: 0 0 32px;
+}
+
+.bestseller-empty {
+  text-align: center;
+  color: #666;
+  font-size: 16px;
+  margin-top: 40px;
+}
+
+.bestseller-list {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.bestseller-card {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 16px;
+  border: 2px solid var(--color-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  background: var(--color-white);
+}
+
+.bestseller-rank {
+  font-size: 20px;
+  font-weight: 800;
+  color: var(--color-icon);
+  width: 36px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.bestseller-image {
+  width: 64px;
+  height: 64px;
+  border-radius: 8px;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.bestseller-info {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.bestseller-name {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-black);
+}
+
+.bestseller-sold {
+  font-size: 14px;
+  color: #777;
+}
+
+.bestseller-price {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--color-icon);
+  flex-shrink: 0;
+}

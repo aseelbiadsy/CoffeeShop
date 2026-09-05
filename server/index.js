@@ -15,6 +15,7 @@ const {
   getCategoryById,
   createCheckOut,
   getAllCheckOut,
+  getBestSellers,
 } = require("./controllers/authController");
 
 // Connect with SQLite (creates/opens server/database/coffeeshop.sqlite)
@@ -34,6 +35,8 @@ api.post("/users", createUser);
 
 api.get("/Checkout", getAllCheckOut);
 api.post("/Checkout", createCheckOut);
+
+api.get("/BestSellers", getBestSellers);
 
 app.use("/api", api);
 

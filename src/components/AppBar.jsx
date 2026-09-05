@@ -61,6 +61,12 @@ const AppBar = ({ userId, onLogout }) => {
         <Link to="/About" className={location.pathname === "/About" ? "appbar-link active" : "appbar-link"}>
           ABOUT
         </Link>
+        <Link
+          to="/BestSeller"
+          className={location.pathname === "/BestSeller" ? "appbar-link active" : "appbar-link"}
+        >
+          BEST SELLER
+        </Link>
       </nav>
 
       <div className="appbar-actions">

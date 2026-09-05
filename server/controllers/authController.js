@@ -111,6 +111,31 @@ const createUser = async (req, res) => {
   }
 };
 
+// Get best-selling products, ranked by total quantity sold across all checkouts
+const getBestSellers = async (req, res) => {
+  try {
+    const allCheckouts = await Checkout.find({});
+
+    const salesByName = {};
+    for (const checkout of allCheckouts) {
+      for (const product of checkout.products || []) {
+        if (!salesByName[product.name]) {
+          salesByName[product.name] = { name: product.name, price: product.price, totalQuantity: 0 };
+        }
+        salesByName[product.name].totalQuantity += product.quantity;
+        salesByName[product.name].price = product.price;
+      }
+    }
+
+    const bestSellers = Object.values(salesByName).sort((a, b) => b.totalQuantity - a.totalQuantity);
+
+    res.json(bestSellers);
+  } catch (error) {
+    console.error("Error getting best sellers:", error);
+    res.status(500).json({ message: "Error getting best sellers" });
+  }
+};
+
 const createCheckOut =async(req,res)=>{
 
   const { userId, products, totalAmount, shippingAddress, customer } = req.body;
@@ -149,4 +174,5 @@ module.exports = {
   getCategoryById,
   createCheckOut,
     getAllCheckOut,
+  getBestSellers,
 };

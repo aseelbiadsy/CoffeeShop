@@ -11,6 +11,7 @@ import LoginScreen from "./components/LoginOut/LoginScreen";
 import RegisterScreen from "./components/LoginOut/RegisterScreen";
 import Footer from "./components/Footer/Footer";
 import CheckOut from "./components/CheckOut";
+import BestSeller from "./components/BestSeller/BestSeller";
 
 const App = () => {
   const [userId, setUserId] = useState(null);
@@ -42,6 +43,7 @@ const App = () => {
 
         <Route path="/CategoryScreen" element={<CategoryScreen />} />
         <Route path="/About" element={<About />} />
+        <Route path="/BestSeller" element={<BestSeller />} />
 
         <Route path="/Details/:encodedSubCategory" element={<Details userId={userId} />} />
         <Route path="/ShoppingCart" element={<ShoppingCart userId={userId} logout={logout} />} />
