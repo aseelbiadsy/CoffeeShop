@@ -1,3 +1,5 @@
+require("dotenv").config();
+
 const express = require("express");
 const bodyParser = require("body-parser");
 const cors = require("cors");
@@ -18,9 +20,8 @@ const {
   getBestSellers,
 } = require("./controllers/authController");
 
-// Connect with SQLite (creates/opens server/database/coffeeshop.sqlite)
-require("./database/db");
-console.log("Connected to SQLite");
+// MySQL connection pool (configured in server/.env)
+const db = require("./database/db");
 
 // All API routes live under /api so nginx can reverse-proxy just this
 // prefix to the backend while serving the built frontend for everything else.
@@ -40,8 +41,19 @@ api.get("/BestSellers", getBestSellers);
 
 app.use("/api", api);
 
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+async function startServer() {
+  try {
+    await db.query("SELECT 1");
+    console.log("Connected to MySQL");
+    app.listen(PORT, () => {
+      console.log(`Server is running on port ${PORT}`);
+    });
+  } catch (error) {
+    console.error("Unable to connect to MySQL:", error.message);
+    process.exit(1);
+  }
+}
+
+startServer();
 
 module.exports = app;
